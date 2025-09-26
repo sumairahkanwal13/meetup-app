@@ -10,28 +10,36 @@ const eventSchema = new mongoose.Schema({
     required: true,
   },
   date: {
-    type: String, 
+    type: String,
     required: true,
   },
   time: {
     type: String,
-    required: true
+    default: ""
+  },
+  endTime: {             
+    type: String,
+    default: ""
   },
   type: {
     type: String,
-    enum: ["Online", "Offline"], 
+    enum: ["Online", "Offline"],
     required: true,
   },
   image: {
-    type: String, 
+    type: String,
     default: "",
   },
   price: {
     type: Number,
-    default: 0, 
+    default: 0,
   },
   venue: {
-    type: String, 
+    type: String,
+    default: "",
+  },
+  address: {
+    type: String,
     default: "",
   },
   tags: [
@@ -42,11 +50,11 @@ const eventSchema = new mongoose.Schema({
   speakers: [
     {
       type: String,
-    }
+    },
   ],
-  address: {
+  organizer: {          
     type: String,
-    default: "",
+    default: ""
   },
   dressCode: {
     type: String,
@@ -55,8 +63,13 @@ const eventSchema = new mongoose.Schema({
   ageRestriction: {
     type: String,
     default: "",
+  },
+  capacity: {            
+    type: Number,
+    default: 0
   }
 });
+
 
 const Events = mongoose.model("Events", eventSchema);
 
