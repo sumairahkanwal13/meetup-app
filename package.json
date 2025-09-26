@@ -1,7 +1,7 @@
 {
   "name": "meetup-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "event.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +14,13 @@
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "mongoose": "^8.18.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumairahkanwal13/Meetup-App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sumairahkanwal13/Meetup-App/issues"
+  },
+  "homepage": "https://github.com/sumairahkanwal13/Meetup-App#readme"
 }
