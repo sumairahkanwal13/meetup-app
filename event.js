@@ -151,6 +151,25 @@ app.delete("/events/:eventId", async (req, res) => {
   }
 });
 
+// 7. RSVP functionality.
+
+app.post("/events/:eventsId/rsvp", async(req, res) => {
+
+  const { name, email } = req.body;
+  try{
+   const event = await Events.findById(req.params.eventsId)
+   if(!event){
+    return res.status(404).json({error: "No data found."})
+   }
+   event.attendees = event.attendees || [];
+   event.address.push({name, email});
+
+   event.save()
+   res.status(200).json({message: "RSVP Successfully", event})
+  }catch(error){
+    res.status(500).json({error: "Failed to fetch information."})
+  }
+})
 
 const PORT = 3000;
 app.listen(PORT, () => {

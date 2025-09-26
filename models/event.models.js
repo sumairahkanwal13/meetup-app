@@ -67,7 +67,14 @@ const eventSchema = new mongoose.Schema({
   capacity: {            
     type: Number,
     default: 0
+  },
+  attendees: [
+  {
+    name: String,
+    email: String
   }
+]
+
 });
 
 
