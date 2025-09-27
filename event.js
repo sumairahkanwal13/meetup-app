@@ -153,11 +153,11 @@ app.delete("/events/:eventId", async (req, res) => {
 
 // 7. RSVP functionality.
 
-app.post("/events/:eventsId/rsvp", async(req, res) => {
+app.post("/events/:eventId/rsvp", async(req, res) => {
 
   const { name, email } = req.body;
   try{
-   const event = await Events.findById(req.params.eventsId)
+   const event = await Events.findById(req.params.eventId)
    if(!event){
     return res.status(404).json({error: "No data found."})
    }
