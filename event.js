@@ -162,9 +162,9 @@ app.post("/events/:eventsId/rsvp", async(req, res) => {
     return res.status(404).json({error: "No data found."})
    }
    event.attendees = event.attendees || [];
-   event.address.push({name, email});
+   event.attendees.push({name, email});
 
-   event.save()
+   await event.save()
    res.status(200).json({message: "RSVP Successfully", event})
   }catch(error){
     res.status(500).json({error: "Failed to fetch information."})
