@@ -49,7 +49,14 @@ const eventSchema = new mongoose.Schema({
   ],
   speakers: [
     {
-      type: String,
+      name: {
+        type: String,
+        required: true,
+      },
+      image: {
+        type: String,
+        default: "",
+      },
     },
   ],
   organizer: {          

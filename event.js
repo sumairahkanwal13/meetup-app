@@ -23,7 +23,7 @@ async function createEvent(newEvent) {
     const event = new Events(newEvent);
     return await event.save();
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 }
 
